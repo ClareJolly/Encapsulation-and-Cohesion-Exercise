@@ -1,8 +1,6 @@
 Object Oriented Code 1, Encapsulation & Cohesion
 ================================================
 
-*There is a Diode project for this practical. [Find it here.](https://diode.makersacademy.com/students/neoeno/projects/370)*
-
 ## Learn to
 
 * Encapsulate program behaviour into cohesive classes.
