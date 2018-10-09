@@ -25,6 +25,9 @@ Bank
                         -----------------------
 ```
 
+** Key point ** - Best to keep presentation logic away from business logic
+
+argument for get balance to be separate but they could be combined into the credit and debit classes
 
   ```
 SecretDiary
@@ -45,6 +48,21 @@ SecretDiary
                   -------------------
 
                           --------------
+                          |  * lock    |
+                          |  * unlock  |
+                          --------------
+  ```
+
+  could keep add and get together as using the same data set
+
+  ```
+
+    ------DIARY--------
+    |  * add_entry    |
+    |  * get_entries  |
+    -------------------
+
+                          ---SECURITY---
                           |  * lock    |
                           |  * unlock  |
                           --------------
