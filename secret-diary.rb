@@ -1,7 +1,4 @@
 class SecretDiary
-
-  # attr_reader :secure
-
   def initialize
     @security = Security.new
     # @secure = true
@@ -9,19 +6,18 @@ class SecretDiary
   end
 
   def add_entry(text)
-    fail "Diary locked." if @security.secure
+    raise 'Diary locked.' if @security.secure
     @entries << text
   end
 
   def get_entries
-    fail "Diary locked." if @security.secure
+    raise 'Diary locked.' if @security.secure
     @entries
   end
 
   def check_secure
     @security.secure
   end
-
 
   def lock
     @security.lock
@@ -33,7 +29,6 @@ class SecretDiary
 end
 
 class Security
-
   attr_reader :secure
 
   def initialize
@@ -49,6 +44,6 @@ class Security
   end
 
   def toggle
-    @secure ? @Secure = false : true
+    @secure ? @secure = false : true
   end
 end
