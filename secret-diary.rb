@@ -4,16 +4,17 @@ class SecretDiary
 
   def initialize
     @secure = true
+    @entries = []
   end
 
-  def add_entry
+  def add_entry(text)
     fail "Diary locked." if @secure
-    true
+    @entries << text
   end
 
   def get_entries
     fail "Diary locked." if @secure
-    true
+    @entries
   end
 
   def lock

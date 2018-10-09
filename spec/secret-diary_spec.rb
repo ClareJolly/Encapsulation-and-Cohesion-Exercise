@@ -8,16 +8,17 @@ describe SecretDiary do
 
   it 'add entry when unlocked' do
     subject.unlock
-    expect(subject.add_entry).to eq true
+    expect(subject.add_entry("test")).to eq ["test"]
   end
 
   it 'errors when locked and add entry attempted' do
-    expect { subject.add_entry }.to raise_error "Diary locked."
+    expect { subject.add_entry("test") }.to raise_error "Diary locked."
   end
 
   it 'get entries when unlocked' do
     subject.unlock
-    expect(subject.get_entries).to eq true
+    subject.add_entry("test")
+    expect(subject.get_entries).to eq ["test"]
   end
 
   it 'errors when locked and get entries attempted' do
